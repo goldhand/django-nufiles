@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.utils import timezone
 
 
-class FilesManager(models.Manager):
+class FileManager(models.Manager):
 
 	def published(self, **kwargs):
 		""" Returns Files that are both status: Active and have a non-conflicting activate_date / deactivate_date 
