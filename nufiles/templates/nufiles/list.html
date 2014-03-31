@@ -1,9 +1,23 @@
 {% extends "nufiles/base.html" %}
 
 {% block content %}
-<ul class="list-unstyled">
+
 {% for file in file_list %}
-<li><a href="{{ MEDIA_ROOT }}/{% url 'nufiles:detail' slug=file.slug %}">{{ file.title }}</a></li>
+
+<div class="media nufiles-list">
+  <a class="pull-left nufiles-thumb" href="{% url 'nufiles:detail' slug=file.slug %}">
+    <img class="media-object img-responsive" src="{{ file.img.url }}" alt="Listen to {{ file.title }}">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading nufiles-heading">
+    	<a href="{% url 'nufiles:detail' slug=file.slug %}">
+    		{{ file.title }}
+		</a>
+    </h4>
+    <p class="nufiles-description">{{ file.description }}</p>
+  </div>
+    <audio controls id="file-{{ file.id }}" src="{{ file.file.url }}" class="nufiles-audio"></audio>
+</div>
+
 {% endfor %}
-</ul>
 {% endblock content %}

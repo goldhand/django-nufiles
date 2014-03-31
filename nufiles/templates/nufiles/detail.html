@@ -3,5 +3,30 @@
 {% block title %}{{ file.title }}{% endblock title %}
 
 {% block content %}
-<a href="{{ file.file }}">{{ file.title }}</a>
+<div class="nufiles-detail">
+<h3 class="nufiles-heading">{{ file.title }}</h3>
+<div class="nufiles-thumb">
+<img src="{{ file.img.url }}" class="img-responsive">
+</div>
+<div class="nufiles-description">
+	<p>{{ file.description }}</p>
+</div>
+<audio controls id="file-{{ file.id }}" src="{{ file.file.url }}" class="nufiles-audio"></audio>
+{% comment %}
+<div class="btn-group nufiles-controls">
+  <button class="btn btn-primary" onclick="document.getElementById('file-{{ file.id }}').play()">
+	<i class="fa fa-play"></i>  	
+  </button>
+  <button class="btn btn-primary" onclick="document.getElementById('file-{{ file.id }}').pause()">
+	<i class="fa fa-pause"></i>
+  </button>
+  <button class="btn btn-primary" onclick="document.getElementById('file-{{ file.id }}').volume+=0.1">
+	<i class="fa fa-volume-up"></i>  	
+  </button>
+  <button class="btn btn-primary" onclick="document.getElementById('file-{{ file.id }}').volume-=0.1">
+	<i class="fa fa-volume-down"></i>  	
+  </button>
+</div>
+{% endcomment %}
+</div>
 {% endblock content %}

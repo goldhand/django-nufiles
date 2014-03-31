@@ -2,3 +2,42 @@
 
 {% block content %}
 {% endblock content %}
+
+{% block css %}
+{{ block.super }}
+<style>
+.nufiles-detail {
+}
+.nufiles-detail .nufiles-thumb {
+}
+.nufiles-detail .nufiles-thumb>img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+.nufiles-detail .nufiles-description {
+}
+.nufiles-detail .nufiles-controls {
+	max-width: 100%;
+}
+.nufiles-detail .nufiles-audio {
+	width: 100%;
+}
+.nufiles-list {
+}
+.nufiles-list .nufiles-thumb {
+	max-width: 100px;
+}
+.nufiles-list .nufiles-controls {
+	max-width: 100%;
+}
+.nufiles-list .nufiles-audio {
+	width: 100%;
+	margin-top: 10px;
+}
+.nufiles-list .nufiles-audio::-webkit-media-controls-enclosure, .nufiles-detail .nufiles-audio::-webkit-media-controls-enclosure {
+	max-width: 100%;
+}
+
+</style>
+{% endblock css %}

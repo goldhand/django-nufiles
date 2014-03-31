@@ -12,6 +12,7 @@ from .managers import FileManager
 class File(TimeStampedModel, TitleSlugDescriptionModel, ActivatorModel):
 	file = models.FileField(upload_to='nufiles/files/%Y/%m/%d')
 	img = models.ImageField(upload_to='nuFiles/thumbs/%Y/%m/%d', blank=True)
+	public = models.BooleanField(default=False, help_text="If not checked, only registered members will be able to view")
 
 	objects = FileManager()
 
