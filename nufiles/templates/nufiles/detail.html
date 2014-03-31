@@ -1,0 +1,7 @@
+{% extends "nufiles/base.html" %}
+
+{% block title %}{{ file.title }}{% endblock title %}
+
+{% block content %}
+<a href="{{ file.file }}">{{ file.title }}</a>
+{% endblock content %}
